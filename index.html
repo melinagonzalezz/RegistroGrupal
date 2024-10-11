@@ -19,40 +19,99 @@
         <div class="col">
           <h1 class="mb-3">Registro</h1>
           <hr class="my-4">
-          <div class="row g-3">
+          <form class="row g-3 needs-validation" id="registroForm" novalidate>
+          <!-- <div class="row g-3"> -->
             <div class="col-sm-6">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" required>
+              <label for="validationNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="validationNombre" aria-describedby="validationName-Feedback" required>
+              <div class="valid-feedback">
+                Completado correctamente
+              </div>
+              <div  id="validationName-Feedback" class="invalid-feedback">
+                Debes completar este campo
+              </div>
             </div>
 
             <div class="col-sm-6">
-              <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="apellido" required>
+              <label for="validationApellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="validationApellido" aria-describedby="validationApellido-Feedback"required>
+              <div class="valid-feedback">
+                Completado correctamente
+              </div>
+              <div id="validationApellido-Feedback" class="invalid-feedback">
+                Debes completar este campo
+              </div>
             </div>
 
             <div class="col-12">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+              <label for="validationEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="validationEmail" aria-describedby="validationEmail-Feedback"required>
+              <div class="valid-feedback">
+                Completado correctamente
+              </div>
+              <div id="validationEmail-Feedback" class="invalid-feedback">
+                Debes completar este campo
+              </div>
             </div>
 
             <div class="col-sm-6">
-              <label for="password1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password1" minlength="6" placeholder="Mínimo 6 caracteres" required>
+              <label for="validationPassword1" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="validationPassword1" minlength="6" placeholder="Mínimo 6 caracteres" aria-describedby="validationPassword1-Feedback" required>
+              <div class="valid-feedback">
+                Completado correctamente
+              </div>
+              <div id="validationPassword1-Feedback" class="invalid-feedback">
+                Debes completar este campo
+              </div>
             </div>
 
             <div class="col-sm-6">
               <label for="password2" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control" id="password2" placeholder="Mínimo 6 caracteres" required>
+              <input type="password" class="form-control" id="password2" placeholder="Mínimo 6 caracteres" aria-describedby="validationPassword2-Feedback"required>
+              <div class="valid-feedback">
+                Completado correctamente
+              </div>
+              <div id="validationPassword1-Feedback" class="invalid-feedback">
+                Debes completar este campo
+              </div>
             </div>
 
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="terminos">
-              <label class="form-check-label" for="terminos" required>Acepto los términos y condiciones del servicio.</label>
+            <div class="col-sm-12">
+              <button type="button" class="btn btn-link ps-0" id="btnTerms" data-bs-toggle="modal"  aria-describedby="validationTerms-Feedback"
+                data-bs-target="#modalTerminos">
+                Términos del servicio
+              </button>
+
+              <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5">Términos y condiciones del servicio.</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Bienvenid@. Al acceder y utilizar nuestros servicios, aceptas cumplir con los siguientes términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, te recomendamos que no utilices nuestros servicios.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="form-terms">
+                        <input type="checkbox" class="form-check-input" value="" id="checkTerms" aria-describedby="checkTerms-feedback">
+                        <label class="form-check-label" for="checkTerms">Acepto los términos y condiciones del servicio.</label>
+                        <div id="checkTerms-feedback" class="invalid-feedback">
+                          Debe aceptarlos antes de enviar el formulario.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            <button class="btn btn-primary" type="button" id="regBtn">Registrarme</button>
+            <button class="btn btn-primary" type="submit" id="regBtn">Registrarme</button>
 
           </div>
+        </form>
+        
         </div>
       </div>
   
@@ -65,6 +124,8 @@
         ningún tipo.</p>
     </footer>
   </div>
+
+  
 
   <div class="alert alert-success alert-dismissible fade" role="alert" id="alert-success">
     <p>Datos guardados correctamente</p>
